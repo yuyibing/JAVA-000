@@ -46,7 +46,6 @@ public class MineHttpClient {
         //2、使用get方法
         HttpGet httpGet = new HttpGet(url);
 
-        InputStream is = null;
         CloseableHttpResponse response = null;
 
         try{
@@ -62,14 +61,6 @@ public class MineHttpClient {
         }catch (IOException e){
             e.printStackTrace();
         }finally {
-            if (is != null) {
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-
             if (response != null) {
                 try {
                     response.close();
